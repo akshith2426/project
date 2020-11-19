@@ -6,11 +6,13 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 var otpGenerator = require('otp-generator');
 var nodemailer = require('nodemailer');
 
+const email_add = require('./config/keys').EMAIL;
+const password = require('./config/keys').PASSWORD;
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-		user: 'rakeshparag876@gmail.com',
-		pass: 'parag@1235'
+		user: email_add,
+		pass: password
 	}
 });
 // Welcome Page
